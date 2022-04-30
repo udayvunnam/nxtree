@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "sveltekit": "packages/sveltekit",
+    "sveltekit-e2e": "e2e/sveltekit-e2e"
+  }
+}

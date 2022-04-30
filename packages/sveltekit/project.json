@@ -1,0 +1,54 @@
+{
+  "root": "packages/sveltekit",
+  "sourceRoot": "packages/sveltekit/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/sveltekit",
+        "main": "packages/sveltekit/src/index.ts",
+        "tsConfig": "packages/sveltekit/tsconfig.lib.json",
+        "assets": [
+          "packages/sveltekit/*.md",
+          {
+            "input": "./packages/sveltekit/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/sveltekit/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/sveltekit",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/sveltekit",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/sveltekit/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/sveltekit"],
+      "options": {
+        "jestConfig": "packages/sveltekit/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

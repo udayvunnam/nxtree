@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "sveltekit",
+  "version": "0.0.1",
+  "generators": {
+    "sveltekit": {
+      "factory": "./src/generators/sveltekit/generator",
+      "schema": "./src/generators/sveltekit/schema.json",
+      "description": "sveltekit generator"
+    }
+  }
+}
